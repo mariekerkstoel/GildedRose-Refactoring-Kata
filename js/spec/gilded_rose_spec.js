@@ -78,4 +78,11 @@ describe("Gilded Rose", function() {
       var updated = shop.updateQuality();
       expect(updated[0].quality).toEqual(0);
   });
+
+  it("Quality of conjured items should degrade by 4 after sell by date", function(){
+    var shop = new Shop([new Item('Conjured Apple', 1, 10)]);
+    var updated = shop.updateQuality();
+    var updated = shop.updateQuality();
+    expect(updated[0].quality).toEqual(4);
+  })
 });

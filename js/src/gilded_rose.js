@@ -85,33 +85,27 @@ class Shop {
       } else {
         if (this.getQuality(i) < 50) {
           this.items[i].quality = this.getQuality(i) + 1;
-        }
-      }
-    }
-  }
-
-  subtractQualityNormalItems(i){
-    if (this.getQuality(i) > 0) {
-      if (this.getName(i) != 'Sulfuras, Hand of Ragnaros') {
-        this.items[i].quality = this.getQuality(i) - 1;
-      }
-    }
-  }
+        };
+      };
+    };
+  };
 
   qualityTicketsZero(i){
     if (this.getName(i) != 'Backstage passes to a TAFKAL80ETC concert') {
       this.subtractQualityNormalItems(i);
     } else {
       this.items[i].quality = 0;
-    }
-  }
+    };
+  };
 
-
-
-
-
-
-
-
-
-}
+  subtractQualityNormalItems(i){
+    if (this.getQuality(i) > 0) {
+      if (this.getName(i) != 'Sulfuras, Hand of Ragnaros') {
+        this.items[i].quality = this.getQuality(i) - 1;
+        if(this.items[i].name.includes('Conjured')){
+          this.items[i].quality = this.getQuality(i) - 1;
+        };
+      };
+    };
+  };
+};
