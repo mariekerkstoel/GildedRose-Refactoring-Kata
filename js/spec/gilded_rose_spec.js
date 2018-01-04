@@ -57,5 +57,25 @@ describe("Gilded Rose", function() {
     var shop = new Shop([new Item('Conjured Apple', 5, 30)]);
     var updated = shop.updateQuality();
     expect(updated[0].quality).toEqual(28);
+  })
+
+  it("Quality of conjured items can never be less than 0", function(){
+      var shop = new Shop([new Item('Conjured Apple', 2, 2)]);
+      var updated = shop.updateQuality();
+      var updated = shop.updateQuality();
+      expect(updated[0].quality).toEqual(0);
+  });
+  it("Quality of conjured items can never be less than 0", function(){
+      var shop = new Shop([new Item('Conjured Apple', 2, 3)]);
+      var updated = shop.updateQuality();
+      var updated = shop.updateQuality();
+      expect(updated[0].quality).toEqual(0);
+  });
+
+  it("Quality of conjured items can never be less than 0", function(){
+      var shop = new Shop([new Item('Conjured Apple', 2, 1)]);
+      var updated = shop.updateQuality();
+      var updated = shop.updateQuality();
+      expect(updated[0].quality).toEqual(0);
   });
 });
