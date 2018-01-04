@@ -102,7 +102,7 @@ class Shop {
     if (this.getQuality(i) > 0) {
       if (this.getName(i) != 'Sulfuras, Hand of Ragnaros') {
         this.items[i].quality = this.getQuality(i) - 1;
-        if(this.items[i].name.includes('Conjured')){
+        if(this.items[i].name.includes('Conjured') && this.getQuality(i) > 1){
           this.items[i].quality = this.getQuality(i) - 1;
         };
       };
