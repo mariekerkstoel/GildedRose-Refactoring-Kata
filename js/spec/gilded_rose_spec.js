@@ -37,17 +37,17 @@ describe("Gilded Rose", function() {
   //   expect(updated[0].sellIn).toEqual(6);
   // });
   //
-  // it("Backstage passes should increase in quality by 2 as there are 10 days or less", function(){
-  //   var shop = new Shop([new Item('Backstage passes to a TAFKAL80ETC concert', 9, 30)]);
-  //   var updated = shop.updateQuality();
-  //   expect(updated[0].quality).toEqual(32);
-  // });
+  it("Backstage passes should increase in quality by 2 as there are 10 days or less", function(){
+    var shop = new Shop([new Item('Backstage passes to a TAFKAL80ETC concert', 9, 30)]);
+    var updated = shop.updateQuality();
+    expect(updated[0].quality).toEqual(32);
+  });
   //
-  // it("Backstage passes should increase in quality by 3 as there are 5 days or less", function(){
-  //   var shop = new Shop([new Item('Backstage passes to a TAFKAL80ETC concert', 4, 30)]);
-  //   var updated = shop.updateQuality();
-  //   expect(updated[0].quality).toEqual(33);
-  // });
+  it("Backstage passes should increase in quality by 3 as there are 5 days or less", function(){
+    var shop = new Shop([new Item('Backstage passes to a TAFKAL80ETC concert', 4, 30)]);
+    var updated = shop.updateQuality();
+    expect(updated[0].quality).toEqual(33);
+  });
   //
   // it("Backstage passes should drop to 0 in quality after sell by date", function(){
   //   var shop = new Shop([new Item('Backstage passes to a TAFKAL80ETC concert', 0, 30)]);
