@@ -31,6 +31,7 @@ class Shop {
   adjustQuality(i){
     if (this.getName(i) != 'Aged Brie' && this.getName(i) != 'Backstage passes to a TAFKAL80ETC concert') {
       this.adjustSulfurasQuality(i)
+      this.adjustConjuredQuality(i)
     } else {
       this.adjustTicketQuality(i)
     }
@@ -47,6 +48,7 @@ class Shop {
       }
     }
   }
+
   subtractQualityNormalItems(i){
     if (this.getQuality(i) > 0) {
       if (this.getName(i) != 'Sulfuras, Hand of Ragnaros') {
@@ -81,6 +83,12 @@ class Shop {
         this.ticketUnderTen(i)
         this.ticketUnderFive(i)
       }
+    }
+  }
+
+  adjustConjuredQuality(i){
+    if (this.items[i].name.includes("Conjured")){
+      this.items[i].quality = this.getQuality(i) - 1
     }
   }
 
