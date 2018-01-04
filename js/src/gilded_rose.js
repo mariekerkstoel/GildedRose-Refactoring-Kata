@@ -17,17 +17,17 @@ class Shop {
       this.adjustQuality(i)
       this.adjustSellIn(i)
       this.adjustQualityPastDate(i)
-    }
+    };
     return this.items;
-  }
+  };
 
   adjustQuality(i){
     if (this.getName(i) != 'Aged Brie' && this.getName(i) != 'Backstage passes to a TAFKAL80ETC concert') {
       this.adjustSulfurasQuality(i)
     } else {
       this.adjustTicketQuality(i)
-    }
-  }
+    };
+  };
 
   adjustSulfurasQuality(i){
     if (this.getQuality(i) > 0 && this.getName(i) != 'Sulfuras, Hand of Ragnaros') {
